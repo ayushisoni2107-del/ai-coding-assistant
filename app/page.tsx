@@ -67,7 +67,9 @@ export default function Home() {
             </div>
           </div>
           {/* Sidebar */}
-          <HistoryPanel history={history} />
+          <div className="w-full lg:w-1/3">
+            <HistoryPanel history={history} />
+          </div>
         </div>
         {/* Features Grid */}
         <FeatureGrid />

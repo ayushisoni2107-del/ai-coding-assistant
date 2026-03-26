@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { HistoryItem } from '../types'
 import { samplePrompt } from '../data/example'
 import { languages } from '../data/example'
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface CodeGenerationProps {
   addToHistory: (
@@ -143,7 +145,9 @@ const CodeGeneration = ({ addToHistory }: CodeGenerationProps) => {
               </button>
             </div>
             <pre className="p-6 overflow-x-auto text-green-400 font-mono text-sm">
-              {generatedCode}
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {generatedCode}
+              </ReactMarkdown>
             </pre>
           </div>
         </div>)}

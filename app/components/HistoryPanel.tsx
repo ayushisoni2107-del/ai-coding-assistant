@@ -22,7 +22,7 @@ const HistoryPanel = ({ history }: HistoryPanelProps) => {
   }
   return (
     <>
-      <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-2xl border w-full lg:w-1/3 p-6">
+      <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-2xl border w-full max-w-md mx-auto p-6">
         <div className="p-6 border-b border-gray-700/50">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold text-white">Recent Activity</h2>
@@ -49,7 +49,7 @@ const HistoryPanel = ({ history }: HistoryPanelProps) => {
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center space-x-2">
-                        <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${config.color} flex items-center justify-center text-white`}>
+                        <div className={`w-8 h-8 rounded-full bg-linear-to-r ${config.color} flex items-center justify-center text-white`}>
                           {config.icon}
                         </div>
                         <span className="text-sm font font-medium text-white capitalize">

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { HistoryItem } from '../types';
 import { sampleCode } from '../data/example';
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 interface CodeExplanationProps {
   addToHistory: (
     type: HistoryItem["type"],
@@ -97,7 +99,9 @@ const CodeExplaination = ({ addToHistory }: CodeExplanationProps) => {
             <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-md px-4 py-2">
               <div className="prose prose-invert max-w-none">
                 <pre className="text-gray-100 whitespace-pre-wrap leading-relaxed text-sm rounded-md">
-                  {explanation}
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {explanation}
+                  </ReactMarkdown>
                 </pre>
               </div>
             </div>

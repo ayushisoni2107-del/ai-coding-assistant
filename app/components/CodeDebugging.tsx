@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { HistoryItem } from '../types';
 import { sampleBuggyCode, sampleCode } from '../data/example';
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface CodeDebuggingProps {
   addToHistory: (
@@ -116,7 +118,9 @@ const CodeDebugging = ({ addToHistory }: CodeDebuggingProps) => {
             <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-md px-4 py-2">
               <div className="prose prose-invert max-w-none">
                 <pre className="text-gray-100 whitespace-pre-wrap leading-relaxed text-sm rounded-md">
-                  {debugging}
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {debugging}
+                  </ReactMarkdown>
                 </pre>
               </div>
             </div>
